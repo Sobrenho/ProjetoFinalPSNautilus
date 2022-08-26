@@ -2,7 +2,7 @@ version: '3'
 services: 
 
   ps:
-    container_name: pf_container
+    container_name: projfinal_container
     image: d8a
     privileged: true
     environment:
@@ -10,7 +10,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /etc/localtime:/etc/localtime
-      - ./:/root/PF
+      - .././:/root/PF
     network_mode: host
     stdin_open: true
     tty: true
