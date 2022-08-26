@@ -26,7 +26,7 @@ if __name__ == '__main__':
     rospy.init_node("follownemo", anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
-        rospy.sleep()       
+        rate.sleep()       
         rospy.Subscriber("/sonar_data", gm.PointStamped, callback)
         
 
