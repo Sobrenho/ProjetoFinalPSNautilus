@@ -10,19 +10,18 @@ class follownemo:
     def getVel(self, msg: gm.PointStamped):
         vel = gm.Twist()
 
-        noise = rospy.get_param("/noise-mag")
 
         vel.linear.x, vel.linear.y, vel.linear.z = 0,0,0
         
 
         if abs(msg.point.x) > 2.2:
-            vel.linear.x = -(msg.point.x - noise)/3.5
+            vel.linear.x = -(msg.point.x )/3.5
         
         if abs(msg.point.y)  > 2.2:
-            vel.linear.y = -(msg.point.y - noise)/3.5
+            vel.linear.y = -(msg.point.y)/3.5
 
         if msg.point.z > 0.3:  
-            vel.linear.z = -(msg.point.z- noise)/3.5 - 0.2
+            vel.linear.z = -(msg.point.z)/3.5 - 0.2
 
         vel.angular.x = 0
         vel.angular.y = 0
